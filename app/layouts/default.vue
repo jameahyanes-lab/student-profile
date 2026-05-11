@@ -6,7 +6,7 @@
                     prepend-icon="mdi-account-plus"
                     title="Add Student"
                     value="addstud"
-                ></v-list-item>
+                >Add Student</v-list-item>
             </v-list>
         </v-navigation-drawer>
 
