@@ -9,6 +9,7 @@
                               >
                            <v-text-field
                            label="Student No."
+                           prepend-inner-icon="mdi-numeric"
                            variant="outlined"
                            placeholder="24-00892">
                            </v-text-field>
@@ -19,6 +20,7 @@
                         md="4">
                            <v-text-field
                            label="Last Name"
+                           prepend-inner-icon="mdi-account"
                            variant="outlined"
                            placeholder="Yanes">
                            </v-text-field>
@@ -29,6 +31,7 @@
                         md="4">
                            <v-text-field
                            label="First Name"
+                            prepend-inner-icon="mdi-account"
                            variant="outlined"
                            placeholder="Jameah Faith">
                            </v-text-field>
@@ -39,6 +42,7 @@
                         md="4">
                            <v-text-field
                            label="Middle Name"
+                           prepend-inner-icon="mdi-account"
                            variant="outlined"
                            placeholder="Valencia">
                            </v-text-field>
@@ -49,6 +53,7 @@
                         md="4">
                            <v-combobox
                            label="Course"
+                           prepend-inner-icon="mdi-account-details-outline"
                            variant="outlined"
                            :items="['BSCS','DCT']"
                            clearable>
@@ -60,6 +65,7 @@
                         md="4">
                            <v-combobox
                            label="Year"
+                           prepend-inner-icon="mdi-account-details-outline"
                            variant="outlined"
                            :items="['1st Year','2nd Year','3rd Year','4th Year']"
                            clearable>
@@ -71,6 +77,7 @@
                         md="4">
                            <v-combobox
                            label="Section"
+                           prepend-inner-icon="mdi-account-details-outline"
                            variant="outlined"
                            :items="['A','B','C']"
                            clearable>
@@ -82,6 +89,7 @@
                         md="4">
                            <v-text-field
                            label="Address"
+                           prepend-inner-icon="mdi-map-marker-outline"
                            variant="outlined"
                            placeholder="SAN SIMON, PAMPANGA">
                            </v-text-field>
@@ -92,6 +100,7 @@
                         md="4">
                            <v-text-field
                            label="Contact Number"
+                           prepend-inner-icon="mdi-card-account-phone-outline"
                            variant="outlined"
                            placeholder="09554818095">
                            </v-text-field>
@@ -102,6 +111,7 @@
                         md="4">
                            <v-combobox
                            label="Gender"
+                           prepend-inner-icon="mdi-gender-transgender"
                            variant="outlined"
                            :items="['Male','Female','LGBTQ']"
                            clearable>
@@ -113,21 +123,21 @@
                         prepend-icon="mdi mdi-file-edit"
                         variant="outlined"
                         color="green"
-                        >EDIT
+                        >SAVE
                      </v-btn>
 
                      <v-btn
                         prepend-icon="mdi mdi-update"
                         variant="outlined"
                         color="blue"
-                        >UPDATE
+                        >EDIT
                      </v-btn>
 
                      <v-btn
                         prepend-icon="mdi mdi-content-save-check-outline"
                         variant="outlined"
                         color="orange"
-                        >SAVE
+                        >UPDATE
                      </v-btn>
 
                      <v-btn
@@ -137,7 +147,58 @@
                         >DELETE
                      </v-btn>
 
+                      <v-card
+                        title="Student Profile"
+                        flat
+                     >
+                        <template v-slot:text>
+                           <v-text-field
+                           v-model="hanapstudent"
+                           label="Search"
+                           prepend-inner-icon="mdi-magnify"
+                           variant="outlined"
+                           hide-details
+                           single-line
+                           ></v-text-field>
+                        </template>
+
+                        <v-data-table
+                           :headers="titlecolumn"
+                           :items="nilalamanngcolumn"
+                           :search="hanapstudent"
+                        ></v-data-table>
+                     </v-card>
+
                </v-container>
          </v-main>
    </v-app>
 </template>                
+
+  <script setup>
+      const hanapstudent = ref('')
+                     
+      const titlecolumn = [
+         {
+            key: 'studno', title: 'Student Number'           
+         },
+         {
+            key: 'lname', title: 'Last Name'           
+         },
+         {
+            key: 'fname', title: 'First Name'           
+         },
+         {
+            key: 'mname', title: 'Middle Name'           
+         },
+      ]
+
+      const nilalamanngcolumn = [
+         {
+            studno: 2400892,
+            lname: 'Yanes',
+            fname: 'Jameah Faith',
+            mname: 'Valencia',
+         }
+      ]
+
+ </script>
