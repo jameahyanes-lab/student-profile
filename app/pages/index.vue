@@ -6,7 +6,7 @@
                   <v-row>
                      <v-col   
                         cols="12"
-                        >
+                              >
                            <v-text-field
                            label="Student No."
                            variant="outlined"
@@ -20,7 +20,7 @@
                            <v-text-field
                            label="Last Name"
                            variant="outlined"
-                           placeholder="Dela Cruz">
+                           placeholder="Yanes">
                            </v-text-field>
                      </v-col>
 
@@ -30,7 +30,7 @@
                            <v-text-field
                            label="First Name"
                            variant="outlined"
-                           placeholder="Juan">
+                           placeholder="Jameah Faith">
                            </v-text-field>
                      </v-col>
 
@@ -40,13 +40,66 @@
                            <v-text-field
                            label="Middle Name"
                            variant="outlined"
-                           placeholder="Santos">
+                           placeholder="Valencia">
                            </v-text-field>
                      </v-col>
 
                      <v-col
                         cols="12"
-                        md="6">
+                        md="4">
+                           <v-combobox
+                           label="Course"
+                           variant="outlined"
+                           :items="['BSCS','DCT']"
+                           clearable>
+                           </v-combobox>
+                     </v-col>
+
+                     <v-col
+                        cols="12"
+                        md="4">
+                           <v-combobox
+                           label="Year"
+                           variant="outlined"
+                           :items="['1st Year','2nd Year','3rd Year','4th Year']"
+                           clearable>
+                           </v-combobox>
+                     </v-col>
+
+                     <v-col
+                        cols="12"
+                        md="4">
+                           <v-combobox
+                           label="Section"
+                           variant="outlined"
+                           :items="['A','B','C']"
+                           clearable>
+                           </v-combobox>
+                     </v-col>
+
+                     <v-col
+                        cols="12"
+                        md="4">
+                           <v-text-field
+                           label="Address"
+                           variant="outlined"
+                           placeholder="SAN SIMON, PAMPANGA">
+                           </v-text-field>
+                     </v-col>       
+
+                     <v-col
+                        cols="12"
+                        md="4">
+                           <v-text-field
+                           label="Contact Number"
+                           variant="outlined"
+                           placeholder="09554818095">
+                           </v-text-field>
+                     </v-col>        
+                     
+                     <v-col
+                        cols="12"
+                        md="4">
                            <v-combobox
                            label="Gender"
                            variant="outlined"
@@ -54,16 +107,6 @@
                            clearable>
                            </v-combobox>
                      </v-col>
-
-                     <v-col
-                        cols="12"
-                        md="6">
-                           <v-text-field
-                           label="Age"
-                           variant="outlined"
-                           placeholder="18">
-                           </v-text-field>
-                     </v-col>                    
                   </v-row>
    
                      <v-btn
